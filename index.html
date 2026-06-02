@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辛克莱别墅 · 服化道需求清单</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF7F2;
+    --warm-white: #FDF9F4;
+    --champagne: #F3EAD8;
+    --gold: #C8A96E;
+    --gold-dark: #A6844A;
+    --burgundy: #7A2E3F;
+    --burgundy-light: #9B4A5A;
+    --sage: #8A9A8A;
+    --sage-dark: #5C6B5C;
+    --charcoal: #2C2C2C;
+    --slate: #4A4A4A;
+    --text: #3A322F;
+    --text-light: #6B5E58;
+    --border: #D4C9B8;
+    --border-light: #E8DFD2;
+    --shadow: rgba(60, 40, 30, 0.06);
+    --shadow-md: rgba(60, 40, 30, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--charcoal);
+    color: var(--champagne);
+    text-align: center;
+    padding: 9px 16px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: linear-gradient(175deg, #E8D5C4 0%, #DFC8B0 30%, #C9A87C 70%, #A6844A 100%);
+    padding: 72px 40px 64px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(122,46,63,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 20%, rgba(255,255,255,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.12) 0%, transparent 60%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 12px;
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+  .hero .meta-line {
+    display: inline-block;
+    border-top: 1px solid rgba(255,255,255,0.45);
+    padding-top: 14px;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section {
+    margin-top: 52px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.7;
+  }
+  .section-title-group h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 3px;
+    margin-bottom: 2px;
+  }
+  .section-title-group .en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--gold-dark);
+    letter-spacing: 2px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 8px 0 28px;
+  }
+  .divider.gold {
+    border-top: 1px solid var(--gold);
+    opacity: 0.4;
+    margin: 28px 0;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .card-header {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-header .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+  .card-tag {
+    display: inline-block;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: var(--sage-dark);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-left: auto;
+    background: var(--champagne);
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 6px 20px;
+    font-size: 14px;
+  }
+  .info-grid .label {
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    font-size: 13px;
+    text-align: right;
+    padding-top: 2px;
+  }
+  .info-grid .value {
+    color: var(--text);
+  }
+
+  /* ── CHARACTER PROFILE ── */
+  .char-profile {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 32px;
+    background: linear-gradient(90deg, rgba(200,169,110,0.06) 0%, transparent 100%);
+    padding: 24px 28px 24px 28px;
+    border-radius: 0 4px 4px 0;
+  }
+  .char-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .char-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 2px;
+  }
+  .char-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--gold-dark);
+  }
+  .char-meta {
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .char-continuity {
+    display: inline-block;
+    font-size: 11px;
+    background: var(--charcoal);
+    color: var(--champagne);
+    padding: 2px 10px;
+    border-radius: 3px;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+  }
+  .char-ref {
+    font-size: 13px;
+    color: var(--sage-dark);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  /* ── BODY-PART TABLE ── */
+  .body-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .body-table th {
+    background: var(--champagne);
+    color: var(--charcoal);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--border);
+  }
+  .body-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+  .body-table td:first-child {
+    font-weight: 500;
+    color: var(--burgundy);
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 90px;
+    white-space: nowrap;
+  }
+  .body-table tr:hover td {
+    background: rgba(200,169,110,0.05);
+  }
+  .color-swatch {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .swatch-ivory  { background: #F5F0E8; }
+  .swatch-pink   { background: #F2D5DB; }
+  .swatch-silver { background: #C8C8C8; }
+  .swatch-lgray  { background: #D5D3D0; }
+  .swatch-dgray  { background: #5A5C5E; }
+  .swatch-black  { background: #1A1A1A; }
+  .swatch-dbrown { background: #4A3222; }
+  .swatch-burg   { background: #7A2E3F; }
+  .swatch-white  { background: #FAFAFA; border: 1px solid #ddd; }
+
+  /* ── SCENE CARD ── */
+  .scene-card {
+    background: linear-gradient(135deg, #F5F0E8 0%, #EDE4D6 100%);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+  }
+  .scene-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+  .scene-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--gold-dark);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .palette-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .palette-chip {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.8);
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+
+  /* ── PROPS TABLE ── */
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .props-table th {
+    background: var(--charcoal);
+    color: var(--champagne);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    padding: 10px 14px;
+  }
+  .props-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+  .props-table tr:hover td {
+    background: rgba(200,169,110,0.05);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .badge-acting { background: var(--burgundy); color: #FFF; }
+  .badge-set    { background: var(--sage); color: #FFF; }
+  .badge-conn   { background: var(--gold-dark); color: #FFF; }
+
+  /* ── CONTINUITY TABLE ── */
+  .continuity-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .continuity-table th {
+    background: var(--champagne);
+    color: var(--charcoal);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding: 10px 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .continuity-table th:first-child { text-align: left; }
+  .continuity-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 12px;
+  }
+  .continuity-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.5px;
+  }
+  .continuity-table .cos-code {
+    font-family: 'Cormorant Garamond', monospace;
+    font-size: 11px;
+    color: var(--burgundy);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── PENDING LIST ── */
+  .pending-list {
+    list-style: none;
+    counter-reset: pending;
+  }
+  .pending-list li {
+    counter-increment: pending;
+    padding: 12px 16px 12px 48px;
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 14px;
+  }
+  .pending-list li::before {
+    content: '0' counter(pending);
+    position: absolute;
+    left: 0; top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--gold-dark);
+    opacity: 0.6;
+    font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 60px;
+    padding-top: 28px;
+    border-top: 2px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 28px; letter-spacing: 3px; }
+    .container { padding: 0 16px 60px; }
+    .info-grid { grid-template-columns: 100px 1fr; }
+    .body-table { font-size: 12px; }
+    .body-table td:first-child { width: 70px; }
+    .card { padding: 20px 18px; }
+    .char-profile { padding: 18px; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #FFF; }
+    .top-bar { background: #000; }
+    .hero { background: #E8D5C4 !important; -webkit-print-color-adjust: exact; }
+    .card, .scene-card { box-shadow: none; break-inside: avoid; }
+    .section { page-break-before: always; }
+    .section:first-of-type { page-break-before: avoid; }
+    .container { max-width: 100%; padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ PASSWORD GATE ═══ -->
+<div id="pw-overlay" style="position:fixed;inset:0;z-index:9999;background:linear-gradient(175deg,#E8D5C4 0%,#C9A87C 100%);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif SC',serif;">
+  <div style="text-align:center;background:rgba(255,255,255,0.85);padding:48px 56px;border-radius:8px;box-shadow:0 8px 40px rgba(60,40,30,0.15);max-width:380px;width:90%;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:42px;color:#C8A96E;margin-bottom:4px;">&#10087;</div>
+    <div style="font-size:22px;font-weight:700;color:#2C2C2C;letter-spacing:4px;margin-bottom:24px;">辛克莱别墅</div>
+    <div style="font-size:13px;color:#6B5E58;letter-spacing:2px;margin-bottom:20px;">Production Design Bible · 第 1–3 集</div>
+    <input id="pw-input" type="password" placeholder="请输入访问密码" style="width:100%;padding:12px 16px;border:1px solid #D4C9B8;border-radius:4px;font-size:15px;text-align:center;letter-spacing:2px;outline:none;box-sizing:border-box;font-family:'Noto Sans SC',sans-serif;" autofocus>
+    <div id="pw-error" style="color:#7A2E3F;font-size:12px;margin-top:8px;display:none;letter-spacing:1px;">密码错误，请重试</div>
+    <button onclick="checkPassword()" style="margin-top:16px;width:100%;padding:12px;background:#2C2C2C;color:#F3EAD8;border:none;border-radius:4px;font-size:14px;letter-spacing:3px;cursor:pointer;font-family:'Noto Serif SC',serif;">进 入</button>
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  var pw = document.getElementById('pw-input').value;
+  if (pw === '50958413') {
+    document.getElementById('pw-overlay').style.display = 'none';
+  } else {
+    document.getElementById('pw-error').style.display = 'block';
+  }
+}
+document.getElementById('pw-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkPassword();
+});
+</script>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="top-bar">Production Design · Costume &amp; Props Breakdown · Episodes 1–3</div>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-ornament">&#10087;</div>
+    <h1>辛克莱别墅</h1>
+    <div class="subtitle">Production Design Bible</div>
+    <div class="meta-line">服化道需求清单 &nbsp;&middot;&nbsp; 第 1–3 集 &nbsp;&middot;&nbsp; 2026 / 06 / 02</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ═══ SECTION 1: 场景美术 ═══ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title-group">
+        <h2>场景美术设定</h2>
+        <div class="en">Art Direction &amp; Set Dressing</div>
+      </div>
+    </div>
+    <hr class="divider">
+
+    <!-- 主场景 -->
+    <div class="scene-card">
+      <div class="scene-name">辛克莱家族别墅 · 私人花园</div>
+      <div class="scene-time">S-01 &nbsp;&middot;&nbsp; 傍晚 Golden Hour &nbsp;&middot;&nbsp; 外景 EXT</div>
+
+      <div class="info-grid" style="margin-bottom:16px;">
+        <div class="label">使用集数</div><div class="value">EP01 / EP02 / EP03（全三集唯一场景）</div>
+        <div class="label">参考方向</div><div class="value">欧式私人庄园花园 — 英式自然风格混植，非规整几何式，强调浪漫感</div>
+        <div class="label">灯光气氛</div><div class="value">傍晚暖金色霞光（Golden Hour），色温约 3500K，光源从西侧斜射</div>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--text-light);margin-bottom:10px;">场景色板</div>
+      <div class="palette-row">
+        <div class="palette-chip" style="background:#F2D8A0;" title="霞光金"></div>
+        <div class="palette-chip" style="background:#E8C4A2;" title="暖橙"></div>
+        <div class="palette-chip" style="background:#F5F0E8;" title="象牙白"></div>
+        <div class="palette-chip" style="background:#C8C0B0;" title="石色"></div>
+        <div class="palette-chip" style="background:#7A8A6A;" title="墨绿"></div>
+        <div class="palette-chip" style="background:#D4A0B0;" title="花粉色"></div>
+        <div class="palette-chip" style="background:#9B8EC0;" title="绣球紫"></div>
+      </div>
+    </div>
+
+    <!-- 陈设清单 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>花园陈设清单<span class="card-tag">Set Dressing</span></div>
+      <table class="props-table">
+        <thead>
+          <tr><th>陈设项</th><th>规格方向</th><th>数量</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>花卉 — 主花丛</td><td>玫瑰（粉/白）、绣球（蓝紫）、郁金香（黄/橙）混植</td><td>覆盖花园四周</td><td>近景用鲜花，远景可替仿真绢花</td></tr>
+          <tr><td>草坪</td><td>修剪整齐绿草坪</td><td>满铺</td><td>真草皮或高仿真草坪毯</td></tr>
+          <tr><td>石板小径</td><td>浅灰色自然石板拼接</td><td>1 条主径</td><td>连接入口 → 花园中央</td></tr>
+          <tr><td>白色长条餐桌</td><td>欧式风格，白色漆面，约 3m × 1m</td><td>1 张</td><td>—</td></tr>
+          <tr><td>配套餐椅</td><td>白色金属框架软垫椅，浅灰坐垫</td><td>12 把</td><td>分散围绕餐桌</td></tr>
+          <tr><td>白色桌布</td><td>纯白棉麻质地，垂坠至地面</td><td>1 块</td><td>—</td></tr>
+          <tr><td>水晶餐盘</td><td>透明水晶玻璃，圆形平盘</td><td>12 套</td><td>—</td></tr>
+          <tr><td>水晶酒杯</td><td>高脚香槟杯</td><td>12 只</td><td>—</td></tr>
+          <tr><td>银质餐具</td><td>欧式花纹：餐刀、餐叉、汤匙、甜点叉</td><td>12 套</td><td>—</td></tr>
+          <tr><td>餐巾</td><td>白色亚麻，叠三角</td><td>12 条</td><td>—</td></tr>
+          <tr><td>冷餐盘</td><td>水果塔、迷你三明治、马卡龙、烟熏三文鱼卷等</td><td>若干盘</td><td>食品美术外包</td></tr>
+          <tr><td>水果拼盘</td><td>葡萄、草莓、切片蜜瓜等</td><td>3 大盘</td><td>—</td></tr>
+          <tr><td>多层生日蛋糕（主）</td><td>三层白色奶油蛋糕，侧面细裱花</td><td>1 个</td><td>另备 1 个替品</td></tr>
+          <tr><td>蛋糕蜡烛</td><td>细长金色蜡烛</td><td>12 支</td><td>备 2 盒（24 支）</td></tr>
+          <tr><td>彩色条幅</td><td>浅粉底色，金色字："祝西娅生日快乐"</td><td>1 条</td><td>悬挂于餐桌后方</td></tr>
+          <tr><td>蛋糕刀</td><td>银色蛋糕切刀</td><td>1 把</td><td>置于蛋糕旁</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 阳台 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>阳台区 S-01A<span class="card-tag">Set Dressing</span></div>
+      <table class="props-table">
+        <thead>
+          <tr><th>陈设项</th><th>规格方向</th><th>数量</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>阳台主体</td><td>白色石质栏杆，欧式立柱，约 3m 宽</td><td>1 处</td></tr>
+          <tr><td>阳台地面</td><td>浅灰色石板</td><td>—</td></tr>
+          <tr><td>盆栽绿植</td><td>中型盆栽：琴叶榕 / 柠檬树</td><td>1–2 盆</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 远景树林 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>远景 — 树林<span class="card-tag">Location</span></div>
+      <div class="info-grid">
+        <div class="label">描述</div><div class="value">自然混交林，阳光从树隙间透过</div>
+        <div class="label">选景要求</div><div class="value">距阳台约 50–80m；需有一棵清晰粗壮树干作为视觉焦点（EP03 凯与辛迪所靠的大树）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 2: 服装设定 ═══ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title-group">
+        <h2>服装 &amp; 造型设定</h2>
+        <div class="en">Costume &amp; Character Styling</div>
+      </div>
+    </div>
+    <hr class="divider">
+
+    <!-- 西娅 Thea -->
+    <div class="char-profile">
+      <div class="char-name-row">
+        <span class="char-name">西娅 · Thea</span>
+        <span class="char-name-en">Sinclair Heiress</span>
+      </div>
+      <div class="char-meta">23 岁 &nbsp;·&nbsp; 辛克莱家族千金 &nbsp;·&nbsp; 造型关键词：清纯高贵 · 少女感 · 不张扬</div>
+      <div class="char-continuity">COS-THEA-A &nbsp;·&nbsp; 全三集主装</div>
+      <div class="char-ref">参考：现代欧式贵族少女晚宴装 &nbsp;→&nbsp; 《Gossip Girl》户外派对 × 英伦庄园低调奢华</div>
+
+      <table class="body-table">
+        <thead><tr><th>部位</th><th>描述</th><th>材质</th><th>颜色</th></tr></thead>
+        <tbody>
+          <tr><td>发型</td><td>浅金色长发，头顶半扎编发盘绕，余发自然垂落至腰际，两鬓各留一缕微卷碎发</td><td>—</td><td><span class="color-swatch" style="background:#E8D5A8;"></span>浅金 Blonde</td></tr>
+          <tr><td>妆容</td><td>自然裸妆：清透底妆 + 淡粉色腮红 + 哑光大地色眼妆 + 细眼线 + 淡粉裸色唇妆</td><td>—</td><td>贴近演员本色底妆</td></tr>
+          <tr><td>主裙</td><td>象牙白真丝束腰礼服裙，方领，领口缀法式细蕾丝花边；半透明泡泡长袖，袖口收束于手腕；A 字长裙摆至脚踝，自然垂坠无花纹</td><td>真丝缎（醋酸纤维可替）</td><td><span class="color-swatch swatch-ivory"></span>象牙白 Pantone 11-0601</td></tr>
+          <tr><td>项链</td><td>细银链 + 家族徽章小吊坠</td><td>925 银</td><td><span class="color-swatch swatch-silver"></span>银本色</td></tr>
+          <tr><td>戒指</td><td>左手无名指：极简订婚银戒</td><td>925 银</td><td><span class="color-swatch swatch-silver"></span>银本色</td></tr>
+          <tr><td>甲油</td><td>修剪整齐，透明护甲油</td><td>—</td><td>透明</td></tr>
+          <tr><td>鞋履</td><td>银色尖头细跟高跟鞋，鞋面细微亮片点缀</td><td>皮革 + 亮片布</td><td><span class="color-swatch swatch-silver"></span>银</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:12px;"><strong>备品：</strong>同款主裙 ×2 &nbsp;·&nbsp; 项链/戒指替品各 1 &nbsp;·&nbsp; 同款鞋 ×2 双</div>
+    </div>
+
+    <!-- 西娅 15岁闪回 -->
+    <div class="char-profile" style="border-left-color:var(--sage);background:linear-gradient(90deg,rgba(138,154,138,0.06) 0%,transparent 100%);">
+      <div class="char-name-row">
+        <span class="char-name">西娅 · Thea</span>
+        <span class="char-name-en">Flashback · Age 15</span>
+      </div>
+      <div class="char-meta">15 岁（闪回）&nbsp;·&nbsp; 造型关键词：少女 · 甜美 · 稚气未脱</div>
+      <div class="char-continuity">COS-THEA-FB &nbsp;·&nbsp; 仅 EP02 2-1 闪回</div>
+
+      <table class="body-table">
+        <thead><tr><th>部位</th><th>描述</th><th>材质</th><th>颜色</th></tr></thead>
+        <tbody>
+          <tr><td>发型</td><td>单侧高马尾，扎浅粉色蝴蝶结发带</td><td>—</td><td>浅金</td></tr>
+          <tr><td>妆容</td><td>极淡裸妆，强调天然少女肤质</td><td>—</td><td>—</td></tr>
+          <tr><td>连衣裙</td><td>淡粉色少女连衣裙，白色彼得潘圆领，短袖</td><td>棉 / 雪纺</td><td><span class="color-swatch swatch-pink"></span>淡粉 Pantone 13-2802</td></tr>
+          <tr><td>鞋履</td><td>白色玛丽珍平底鞋</td><td>皮革</td><td><span class="color-swatch swatch-white"></span>白</td></tr>
+          <tr><td>头戴</td><td>彩色圆锥形生日帽（纸制），松紧带固定</td><td>卡纸</td><td>彩色条纹</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:12px;"><strong>备品：</strong>连衣裙 ×2 &nbsp;·&nbsp; 生日帽 ×5 &nbsp;·&nbsp; 蝴蝶结发带 ×2</div>
+    </div>
+
+    <!-- 凯 Kai -->
+    <div class="char-profile" style="border-left-color:var(--sage-dark);background:linear-gradient(90deg,rgba(92,107,92,0.06) 0%,transparent 100%);">
+      <div class="char-name-row">
+        <span class="char-name">凯 · Kai</span>
+        <span class="char-name-en">Lancaster Heir</span>
+      </div>
+      <div class="char-meta">23 岁 &nbsp;·&nbsp; 兰开斯特次子 &nbsp;·&nbsp; 造型关键词：富家少爷 · 时尚不羁 · 轻浮公子</div>
+      <div class="char-continuity">COS-KAI-A &nbsp;·&nbsp; 全三集主装</div>
+      <div class="char-ref">参考：意式休闲西装风 &nbsp;→&nbsp; 《Crazy Rich Asians》男配日常派对装</div>
+
+      <table class="body-table">
+        <thead><tr><th>部位</th><th>描述</th><th>材质</th><th>颜色</th></tr></thead>
+        <tbody>
+          <tr><td>发型</td><td>深棕色短发，三七分梳理，发蜡定型，利落有型</td><td>—</td><td><span class="color-swatch swatch-dbrown"></span>深棕</td></tr>
+          <tr><td>妆容</td><td>男妆极淡：均匀肤色底妆 + 自然眉形</td><td>—</td><td>—</td></tr>
+          <tr><td>外套</td><td>浅灰色修身休闲西装，平驳领单排扣</td><td>羊毛混纺</td><td><span class="color-swatch swatch-lgray"></span>浅灰 Pantone 14-4201</td></tr>
+          <tr><td>衬衫</td><td>白色正装衬衫，领口第一颗扣不系，自然敞开</td><td>棉</td><td><span class="color-swatch swatch-white"></span>白</td></tr>
+          <tr><td>裤装</td><td>深灰色九分西裤，修身剪裁</td><td>羊毛混纺</td><td><span class="color-swatch swatch-dgray"></span>深灰 Pantone 18-0201</td></tr>
+          <tr><td>手表</td><td>银色金属链表</td><td>不锈钢</td><td><span class="color-swatch swatch-silver"></span>银</td></tr>
+          <tr><td>鞋履</td><td>深棕色布洛克雕花皮鞋，配同色隐形船袜</td><td>皮革</td><td><span class="color-swatch swatch-dbrown"></span>深棕</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:12px;"><strong>备品：</strong>外套 ×2 &nbsp;·&nbsp; 衬衫 ×3 &nbsp;·&nbsp; 裤子 ×2 &nbsp;·&nbsp; 鞋 ×2 双</div>
+    </div>
+
+    <!-- 基恩 Keane -->
+    <div class="char-profile" style="border-left-color:var(--charcoal);background:linear-gradient(90deg,rgba(44,44,44,0.06) 0%,transparent 100%);">
+      <div class="char-name-row">
+        <span class="char-name">基恩 · Keane</span>
+        <span class="char-name-en">Lancaster Patriarch</span>
+      </div>
+      <div class="char-meta">27 岁 &nbsp;·&nbsp; 兰开斯特长子 &nbsp;·&nbsp; 造型关键词：成熟冷峻 · 掌控感 · 暗色系</div>
+      <div class="char-continuity">COS-KEANE-A &nbsp;·&nbsp; EP02–03</div>
+      <div class="char-ref">参考：经典英伦三件套 &nbsp;→&nbsp; 《Kingsman》便装版 × 《Succession》商务宴会风</div>
+
+      <table class="body-table">
+        <thead><tr><th>部位</th><th>描述</th><th>材质</th><th>颜色</th></tr></thead>
+        <tbody>
+          <tr><td>发型</td><td>黑色短发，全部向后梳理，两侧鬓角推净，一丝不苟</td><td>—</td><td><span class="color-swatch swatch-black"></span>黑</td></tr>
+          <tr><td>妆容</td><td>男妆极淡：强调下颌轮廓修容</td><td>—</td><td>—</td></tr>
+          <tr><td>外套</td><td>黑色平驳领单排扣西装外套</td><td>精纺羊毛</td><td><span class="color-swatch swatch-black"></span>黑 Pantone 19-4005</td></tr>
+          <tr><td>马甲</td><td>同色黑色西装马甲，单排扣</td><td>精纺羊毛</td><td><span class="color-swatch swatch-black"></span>同黑</td></tr>
+          <tr><td>衬衫</td><td>白色正装衬衫，领口系黑色窄领带（约 5.5cm 宽）</td><td>棉</td><td><span class="color-swatch swatch-white"></span>白</td></tr>
+          <tr><td>裤装</td><td>黑色直筒西裤，裤线笔挺</td><td>精纺羊毛</td><td><span class="color-swatch swatch-black"></span>同黑</td></tr>
+          <tr><td>手表</td><td>黑色皮带机械腕表</td><td>皮革 + 不锈钢</td><td>黑皮带 / 银表盘</td></tr>
+          <tr><td>钢笔</td><td>银色钢笔，夹于左胸袋</td><td>金属</td><td><span class="color-swatch swatch-silver"></span>银</td></tr>
+          <tr><td>鞋履</td><td>黑色牛津皮鞋，镜面抛光</td><td>皮革</td><td><span class="color-swatch swatch-black"></span>黑</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:12px;"><strong>备品：</strong>全套三件套 ×2 &nbsp;·&nbsp; 衬衫 ×3 &nbsp;·&nbsp; 领带 ×2 &nbsp;·&nbsp; 鞋 ×1 双</div>
+    </div>
+
+    <!-- 辛迪 Cindy -->
+    <div class="char-profile" style="border-left-color:var(--burgundy);background:linear-gradient(90deg,rgba(122,46,63,0.06) 0%,transparent 100%);">
+      <div class="char-name-row">
+        <span class="char-name">辛迪 · Cindy</span>
+        <span class="char-name-en">The Other Woman</span>
+      </div>
+      <div class="char-meta">23 岁 &nbsp;·&nbsp; 孤儿 &nbsp;·&nbsp; 凯的外遇对象 &nbsp;·&nbsp; 造型关键词：性感 · 纯欲反差 · 表面无害</div>
+      <div class="char-continuity">COS-CINDY-A &nbsp;·&nbsp; EP02 远景 / EP03 树林</div>
+      <div class="char-ref">参考：夜场/派对性感风但略收敛 &nbsp;→&nbsp; 修身丝绒吊带裙</div>
+
+      <table class="body-table">
+        <thead><tr><th>部位</th><th>描述</th><th>材质</th><th>颜色</th></tr></thead>
+        <tbody>
+          <tr><td>发型</td><td>深棕色大波浪长卷发，中分，披散至胸前</td><td>—</td><td><span class="color-swatch swatch-dbrown"></span>深棕</td></tr>
+          <tr><td>妆容</td><td>"伪素颜"妆：清透底妆 + 下垂眼线（显无辜）+ 淡粉色唇釉；实际妆感完整</td><td>—</td><td>—</td></tr>
+          <tr><td>耳饰</td><td>小巧珍珠耳钉</td><td>淡水珍珠 + 银</td><td><span class="color-swatch swatch-white"></span>白 / 银</td></tr>
+          <tr><td>颈饰</td><td>极细金链 + 心形小吊坠</td><td>K 金</td><td>金</td></tr>
+          <tr><td>连衣裙</td><td>酒红色低胸细吊带连衣裙，深 V 领口露锁骨肩线，包臀修身剪裁，裙长约膝上一掌</td><td>丝绒（天鹅绒）</td><td><span class="color-swatch swatch-burg"></span>酒红 Pantone 19-1629</td></tr>
+          <tr><td>甲油</td><td>酒红色甲油，与裙色呼应</td><td>—</td><td><span class="color-swatch swatch-burg"></span>酒红</td></tr>
+          <tr><td>手部配饰</td><td>右手食指装饰戒指</td><td>合金</td><td>淡金</td></tr>
+          <tr><td>鞋履</td><td>黑色细带高跟凉鞋，脚踝系带设计</td><td>皮革</td><td><span class="color-swatch swatch-black"></span>黑</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:12px;"><strong>备品：</strong>连衣裙 ×2（树林戏易勾丝）&nbsp;·&nbsp; 耳钉 ×3 对 &nbsp;·&nbsp; 鞋 ×2 双</div>
+    </div>
+
+    <!-- 群演 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>宾客群演 · BG<span class="card-tag">约 10–12 人</span></div>
+      <table class="body-table">
+        <thead><tr><th>人群</th><th>发型</th><th>妆容</th><th>服装</th><th>鞋履</th></tr></thead>
+        <tbody>
+          <tr><td>男宾</td><td>短发，发蜡造型</td><td>自然淡妆</td><td>各色休闲西装/衬衫/西裤（灰、蓝、米色系）<br><em>禁：与凯撞浅灰</em></td><td>皮质正装鞋</td></tr>
+          <tr><td>女宾</td><td>盘发 / 披肩长发 / 半扎发</td><td>自然派对淡妆</td><td>各色连衣裙/半身裙+衬衫（粉、蓝、浅紫、浅黄）<br><em>禁：撞象牙白或酒红</em></td><td>各色高跟鞋/平底鞋</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-light);margin-top:10px;">每人服装无备品，开拍前统一检查整洁即可。</div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 3: 道具清单 ═══ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title-group">
+        <h2>道具清单</h2>
+        <div class="en">Props Breakdown</div>
+      </div>
+    </div>
+    <hr class="divider">
+
+    <!-- 戏用道具 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>戏用道具 · Acting Props<span class="card-tag">演员操作</span></div>
+      <table class="props-table">
+        <thead>
+          <tr><th>编号</th><th>道具名</th><th>持有者</th><th>场次</th><th>规格方向</th><th>数量</th><th>备品</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-acting">AP-01</span></td>
+            <td>智能手机</td><td>凯</td><td>EP01 1-1</td>
+            <td>黑色直板智能手机（中性无 Logo 道具机）；近景需贴来电画面贴片</td><td>1 部</td><td>2 部</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-acting">AP-02</span></td>
+            <td>礼物盒（含相机）</td><td>基恩 → 西娅</td><td>EP02 2-2</td>
+            <td>深蓝色硬盒约 25×20×15cm，深蓝色缎带十字包扎，盒内填充黑色拉菲草丝</td><td>1 个</td><td>2 个</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-acting">AP-03</span></td>
+            <td>徕卡镜头数码相机</td><td>西娅</td><td>EP02 2-2 / EP03 3-1</td>
+            <td>复古外观数码相机，银黑配色，需能完成举机、调焦、按快门动作</td><td>1 台</td><td>2 台</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-acting">AP-04</span></td>
+            <td>生日帽</td><td>西娅（15 岁闪回）</td><td>EP02 2-1</td>
+            <td>圆锥形纸制，彩色横条纹（粉/黄/蓝/绿），松紧带固定下颌</td><td>1 顶</td><td>5 顶</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 陈设道具重点 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>陈设道具重点 · Set Dressing Key Items<span class="card-tag">环境摆放</span></div>
+      <table class="props-table">
+        <thead>
+          <tr><th>编号</th><th>道具名</th><th>数量</th><th>备品</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-set">SD-01</span></td>
+            <td>多层生日蛋糕（主）</td><td>1 个</td><td>1 个替品</td>
+            <td>近景用真蛋糕，远景可用仿真</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-set">SD-02</span></td>
+            <td>蛋糕蜡烛</td><td>12 支</td><td>24 支（2 盒）</td>
+            <td>含已点燃替品和未燃替品</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-set">SD-03</span></td>
+            <td>彩色条幅</td><td>1 条</td><td>1 条</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-set">SD-04</span></td>
+            <td>水晶餐具套装</td><td>12 套</td><td>每款 +2 备品</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-set">SD-05</span></td>
+            <td>蛋糕刀</td><td>1 把</td><td>1 把</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 连戏道具 -->
+    <div class="card">
+      <div class="card-header"><span class="dot"></span>连戏道具 · Continuity Props<span class="card-tag">跨场次一致</span></div>
+      <table class="props-table">
+        <thead>
+          <tr><th>编号</th><th>道具名</th><th>涉及场次</th><th>连戏注意点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-conn">CP-01</span></td>
+            <td>凯的手机</td>
+            <td>EP01 1-1 全段</td>
+            <td>出场即持，离开时带走；来电画面近景需一致</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-conn">CP-02</span></td>
+            <td>生日蛋糕（点燃后）</td>
+            <td>EP01 1-1 → EP02 2-1</td>
+            <td>蜡烛点燃状态保持；场次间隔长需重备火苗高度接近的蜡烛</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-conn">CP-03</span></td>
+            <td>相机</td>
+            <td>EP02 2-2 → EP03 3-1</td>
+            <td>基恩赠予 → 西娅拍摄 → 基恩接机拍摄，三场外观一致，镜头焦段位置一致</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 4: 连戏场次汇总 ═══ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title-group">
+        <h2>连戏场次汇总</h2>
+        <div class="en">Continuity Breakdown</div>
+      </div>
+    </div>
+    <hr class="divider">
+
+    <div class="card" style="overflow-x:auto;">
+      <table class="continuity-table">
+        <thead>
+          <tr><th>场次</th><th>西娅</th><th>凯</th><th>基恩</th><th>辛迪</th><th>戏用道具</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EP01 1-1 宴会</td>
+            <td class="cos-code">COS-THEA-A</td>
+            <td class="cos-code">COS-KAI-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td style="color:var(--text-light);">—</td>
+            <td>手机（凯）、蛋糕+蜡烛</td>
+          </tr>
+          <tr>
+            <td>EP02 2-1 闪回</td>
+            <td class="cos-code">COS-THEA-FB</td>
+            <td style="color:var(--text-light);">—</td>
+            <td style="color:var(--text-light);">—</td>
+            <td style="color:var(--text-light);">—</td>
+            <td>生日帽</td>
+          </tr>
+          <tr>
+            <td>EP02 2-1 现实</td>
+            <td class="cos-code">COS-THEA-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td class="cos-code">COS-KEANE-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td>礼物盒（基恩）</td>
+          </tr>
+          <tr>
+            <td>EP02 2-2 阳台</td>
+            <td class="cos-code">COS-THEA-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td class="cos-code">COS-KEANE-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td>礼物盒 → 相机（交接）</td>
+          </tr>
+          <tr>
+            <td>EP02 2-2 树林远景</td>
+            <td style="color:var(--text-light);">—</td>
+            <td class="cos-code">COS-KAI-A</td>
+            <td style="color:var(--text-light);">—</td>
+            <td class="cos-code">COS-CINDY-A</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>EP03 3-1 发现/拍照</td>
+            <td class="cos-code">COS-THEA-A</td>
+            <td class="cos-code">COS-KAI-A</td>
+            <td class="cos-code">COS-KEANE-A</td>
+            <td class="cos-code">COS-CINDY-A</td>
+            <td>相机（西娅 → 基恩）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 5: 待确认项 ═══ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title-group">
+        <h2>待确认事项</h2>
+        <div class="en">Pending Confirmations</div>
+      </div>
+    </div>
+    <hr class="divider">
+
+    <div class="card">
+      <ol class="pending-list">
+        <li>凯的手机品牌是否有植入/赞助要求？</li>
+        <li>相机型号是否需指定品牌/是否有赞助？</li>
+        <li>西娅订婚戒指是否需特写？如有需定制或选明显款式</li>
+        <li>花园实景拍摄还是棚内搭景？（影响花卉/灯光方案）</li>
+        <li>群演具体人数</li>
+        <li>是否需要为每个角色出视觉参考 mood board？</li>
+        <li>辛迪树林戏是否为真外景？若真外景需考虑蚊虫/草地等拍摄条件预案</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="footer">
+    <span>制表：2026 / 06 / 02 &nbsp;·&nbsp; 第 1–3 集</span>
+    <span>下一步 → 气氛板 &nbsp;·&nbsp; 定妆 &nbsp;·&nbsp; 勘景</span>
+  </div>
+
+</div>
+
+</body>
+</html>
